@@ -2,9 +2,9 @@
   "name": "jsgame",
   "version": "0.0.0",
   "description": "",
-  "main": "js/index.js",
+  "main": "index.js",
   "scripts": {
-    "test": "nodemon js/index.js"
+    "test": "nodemon index.js"
   },
   "repository": {
     "type": "git",
