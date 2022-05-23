@@ -70,7 +70,7 @@ class AddAddress
 
     sendFile(file = this.file)
     {
-        this.res.sendFile(file, {root: static_dir})
+        this.res.sendFile(file, {root: __dirname})
     }
 }
 
