@@ -8,8 +8,23 @@ var Sprite = new Phaser.Class(
         this.repeat = -1
         this.frameRate = 10
         this.frames = null
-        player = this.scene.physics.add.sprite(x, y, img.id)
-        player.setBounce(0.2);
-        player.setCollideWorldBounds(true);
+        this.sprite = this.scene.physics.add.sprite(x, y, img.id)
+        this.setCollideWorldBounds(true)
+    },
+
+    setBounce(bounce)
+    {
+        if (bounce > 0)
+            this.sprite.setBounce(bounce)
+    },
+
+    setCollideWorldBounds(collideWorldBounds)
+    {
+        this.sprite.setCollideWorldBounds(collideWorldBounds)
+    },
+
+    addCollider(collider)
+    {
+        this.scene.physics.add.collider(this.sprite, collider)
     }
 })
