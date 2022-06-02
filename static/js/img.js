@@ -13,14 +13,17 @@ var Img = new Phaser.Class(
         this.scene.load.image(String(this.id), this.path)
     },
 
-    setScale(scale)
+    setScalePx(width, height)
     {
-        if (scale > 0)
-            this.scale = scale
+        if (width > 0 && height > 0)
+        {
+            this.id.width = width
+            this.id.height = height
+        }
     },
 
     create(x = 0, y = 0)
     {
-        this.scene.add.image(x * this.scale, y * this.scale, this.id).setOrigin(0, 0)
+        this.scene.add.image(x, y, this.id).setOrigin(0, 0)
     }
 })

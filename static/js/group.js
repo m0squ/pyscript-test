@@ -1,4 +1,4 @@
-var Physics = new Phaser.Class(
+var PhysicsGroup = new Phaser.Class(
     {
         Extends: Phaser.Physics.Arcade.StaticGroup,
     

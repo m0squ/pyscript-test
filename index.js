@@ -22,7 +22,7 @@ app.use((req, res, next) => {
                 break
         }
         time = new Date()
-        console.log("[" + time.getFullYear() + "/" + (time.getMonth() + 1) + "/" + time.getDate(), time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds() + "." + time.getMilliseconds() + "]", req.method, req.url, res.statusCode, res.statusMessage)
+        console.log(`[${time.getFullYear()}/${time.getMonth() + 1}/${time.getDate()} ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}.${time.getMilliseconds()}]`, req.method, req.url, res.statusCode, res.statusMessage)
     })
     next()
 })
@@ -55,7 +55,7 @@ class AddAddress
             app.get(this.url, (req, res) => {
                 this.req = req
                 this.res = res
-                this.sendError(500, "addAddress: unknown method: " + this.method)
+                this.sendError(500, `${arguments.callee.name}: unknown method: " + ${this.method}`)
             })
         }
     }
@@ -63,7 +63,7 @@ class AddAddress
     sendError(code, msg = "")
     {
         if (msg)
-            this.res.status(code).send("<!DOCTYPE html><html><head><script>console.error(\"" + msg + "\")</script></head><body></body></html>")
+            this.res.status(code).send(`<!DOCTYPE html><html><head><script>console.error("${msg}")</script></head><body></body></html>`)
         else
             this.res.status(code)
     }
