@@ -15,8 +15,8 @@
 #   $ git init   | Make the directory a Git repository
 #   $ git status | Show the committed, modified and untracked files in the directory
 
-# make identify: configures your Git profile. This is required for you to commit your work
-identify:
+# make config: configures your Git profile. This is required for you to commit your work
+config:
 	git config --global user.email "$(email)"
 	git config --global user.name "$(name)"
 
