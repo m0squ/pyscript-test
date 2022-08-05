@@ -1,4 +1,4 @@
-console.log("=== JsGame ===\nPress ^C to quit")
+console.log("=== Pyscript Test ===\nPress ^C to quit")
 
 const express = require("express")
 const res = require("express/lib/response")
